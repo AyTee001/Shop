@@ -16,7 +16,7 @@ namespace Shop.Models
 
         public override string ToString()
         {
-            return $"{Name} \n\t- Brand: {Brand} \n\t- Department: {Gender} \n\t- Size: {Size} \n\t- Total for this item: {CalculatePrice():C}";
+            return $"{Name} \n\t- Brand: {Brand} \n\t- Department: {Gender} \n\t- Size: {Size} \n\t- Total for this item: {CalculatePrice():C} \n\t-Quantity: {Quantity}";
         }
 
     }
