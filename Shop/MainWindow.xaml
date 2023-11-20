@@ -154,7 +154,7 @@
         <TextBlock HorizontalAlignment="Left" Height="49" Margin="10,24,0,0" TextWrapping="Wrap" Text="THE SHOP" VerticalAlignment="Top" Width="590" FontSize="36" FontWeight="Bold" TextAlignment="Center"/>
         <Button Content="Order" Command="{Binding MakeOrderOrDiscard}" HorizontalAlignment="Left" Margin="622,556,0,0" VerticalAlignment="Top" Width="115" Name="OrderButton"/>
         <TextBlock HorizontalAlignment="Left" Margin="622,521,0,0" TextWrapping="Wrap" Text="Total:" VerticalAlignment="Top"/>
-        <Button Content="Discard" Command="{Binding MakeOrderOrDiscard}" HorizontalAlignment="Left" Margin="808,556,0,0" VerticalAlignment="Top" Width="71"/>
+        <Button Content="Discard" Command="{Binding MakeOrderOrDiscard}" HorizontalAlignment="Left" Margin="746,556,0,0" VerticalAlignment="Top" Width="71"/>
         <TextBox HorizontalAlignment="Left" Name="AddressTextBox" Margin="685,500,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Validation.ErrorTemplate="{StaticResource validationTemplate}" Style="{StaticResource textBoxInError}">
             <TextBox.Text>
                 <Binding Path="Address" UpdateSourceTrigger="PropertyChanged">
@@ -166,5 +166,6 @@
         </TextBox>
         <TextBlock HorizontalAlignment="Left" Margin="622,500,0,0" TextWrapping="Wrap" Text="Address:" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="685,523,0,0" TextWrapping="Wrap" Text="{Binding Total}" VerticalAlignment="Top" Width="120" Background="#FFF"/>
+        <Button Content="Download" HorizontalAlignment="Left" Margin="834,556,0,0" VerticalAlignment="Top" Width="73" Command="{Binding DownloadCart}"/>
     </Grid>
 </Window>

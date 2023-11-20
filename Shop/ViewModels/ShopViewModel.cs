@@ -5,6 +5,8 @@ using Shop.Models.Enums;
 using Shop.ViewModels.Abstract;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.IO;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
 
@@ -71,6 +73,7 @@ namespace Shop.ViewModels
 
         public ICommand AddToCart { get; }
         public ICommand MakeOrderOrDiscard { get; }
+        public ICommand DownloadCart { get; }
 
         public ShopViewModel()
         {
@@ -94,6 +97,19 @@ namespace Shop.ViewModels
                     Products.Clear();
                 },
                 canExecuteFunc => true);
+
+            DownloadCart = new RelayCommand(
+                executeAction => DownloadOrders(),
+                canExecuteFunc => true);
         }
+
+        public void DownloadOrders()
+        {
+            DriveInfo dDrive = new("D:");
+            string filePath = Path.Combine(dDrive.RootDirectory.FullName, "products.txt");
+            using StreamWriter writer = new(filePath);
+            writer.Write(string.Join("\n", Products));
+        }
+
     }
 }
